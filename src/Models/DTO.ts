@@ -17,26 +17,47 @@ export namespace DTO {
   export interface Data {
     Singer: string;
     SongName: string;
-    About: {
-      Artist: string;
-      Released: number;
-      Album?: string;
-      Genre?: string;
-      Award?: string;
-      Nominations?: string;
-    };
+    About: DataAbout;
     Lyrics: string;
 
     Videos: {
       Name: string;
-      url: string;
+      VideoId: string;
     }[];
   }
 
-  export interface ContentHeader {
-    singerName: string;
-    songName: string;
+  export interface DataAbout {
+    Artist: string;
+    Released: number;
+    Album?: string;
+    Genre?: string;
+    Award?: string;
+    Nominations?: string;
+  }
+
+  export interface ActiveTabState {
     activeTab: "Overview" | "Lyrics" | "Videos";
     setActiveTab: React.Dispatch<React.SetStateAction<"Overview" | "Lyrics" | "Videos">>;
+  }
+
+  export interface ContentHeader extends ActiveTabState {
+    singerName: string;
+    songName: string;
+  }
+
+  export interface YoutubeProps {
+    videoId: string;
+    height: string;
+    width: string;
+    songName: string;
+    className?: string;
+  }
+
+  export interface LyricsProps extends ActiveTabState {
+    data: Data;
+  }
+
+  export interface ListOfVideosProps {
+    data: Data;
   }
 }

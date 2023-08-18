@@ -3,8 +3,8 @@ import { MainFilterItems } from "@/Data";
 import Button from "@/Shared/Button";
 import GoogleLogo from "@/assets/images/google.png";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { FormEvent, useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { BsFillCameraFill, BsFillMicFill, BsSearch } from "react-icons/bs";
 import { v4 as uuidv4 } from "uuid";
@@ -12,12 +12,18 @@ import { v4 as uuidv4 } from "uuid";
 const InputIcons = [<BsFillCameraFill key={uuidv4()} />, <BsFillMicFill key={uuidv4()} />, <BsSearch key={uuidv4()} />];
 
 const MainHeader = () => {
-  const [songName, setSongName] = useState("");
+  const params = useParams() as { songName: string };
+
+  const [songName, setSongName] = useState(params?.songName || "");
   const router = useRouter();
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
     router.push(`/${songName}`);
   };
+
+  useEffect(() => {
+    if (params?.songName) setSongName(params?.songName);
+  }, [params?.songName]);
 
   return (
     <header className="col-span-3 grid grid-cols-main items-center gap-4 pt-6 border-b border-opacity-20 border-gray-100 pl-20 pb-4">

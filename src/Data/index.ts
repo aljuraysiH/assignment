@@ -18,15 +18,15 @@ export const MainData = [
     Videos: [
       {
         Name: "Ed Sheeran - Shape of You (Official Music Video)",
-        url: "https://www.youtube.com/watch?v=JGwWNGJdvx8",
+        VideoId: "JGwWNGJdvx8",
       },
       {
         Name: "Ed Sheeran - Shape Of You [Official Lyric Video]",
-        url: "https://www.youtube.com/watch?v=_dK2tDK9grQ",
+        VideoId: "_dK2tDK9grQ",
       },
       {
         Name: "Ed Sheeran - Shape Of You (Lyrics)",
-        url: "https://www.youtube.com/watch?v=Vds8ddYXYZY",
+        VideoId: "_dK2tDK9grQ",
       },
     ],
   },
@@ -45,15 +45,15 @@ export const MainData = [
     Videos: [
       {
         Name: "Ed Sheeran - Bad Habits [Official Video]",
-        url: "https://www.youtube.com/watch?v=orJSJGHjBLI",
+        VideoId: "JGwWNGJdvx8",
       },
       {
         Name: "Ed Sheeran - Bad Habits [Official Lyric Video]",
-        url: "https://www.youtube.com/watch?v=orJSJGHjBLI",
+        VideoId: "_dK2tDK9grQ",
       },
       {
         Name: "Ed Sheeran - Bad Habits (Lyrics)",
-        url: "https://www.youtube.com/watch?v=orJSJGHjBLI",
+        VideoId: "_dK2tDK9grQ",
       },
     ],
   },
